@@ -32,6 +32,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function shortlinks()
+    {
+        return $this->hasMany(Shortlink::class, 'id_user');
+    }
+
     /**
      * Get the attributes that should be cast.
      *
